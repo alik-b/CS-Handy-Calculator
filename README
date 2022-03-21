@@ -1,0 +1,24 @@
+Calculator by Alik Balika
+
+This calculator project contains 3 packages. It follows the MVC design pattern.
+
+The model package contains 11 classes. There is an abstract Number class which is a superclass for the Binary, Hex, and
+Decimal classes. There are 3 enums that contains the names of specific data units and their appropriate factors.
+Then there is an abstract Unit class which takes in a generic type of one of the 3 enums to instantiate it. The Unit
+class has 3 subclasses which are SizeUnit, RateUnit, and FrequencyUnit.
+
+The view package contains 8 classes. 2 of the classes actually run the program. The first is Main which is displaying
+the CLI and using all the classes in order to run the program. It displays an introductory message and the main menu,
+and sub menus, etc. The second class that can run the program is MainGUI which is a class that actually runs the
+GUI and sets up the frame/basic components of the frame. MainGUI adds an instance of TabbedPane which is a component
+that adds tabs to the frame with panels. The TabbedPane then has 4 separate instances of different classes that are
+BinaryPanel, HexPanel, BandwidthPanel, and FilePanel. Each class is a panel with their appropriate calculations
+displayed which the user can interact with. The final class is the CalculateFile class. This class has one method that
+takes in a String and if it is a valid File, it will scan the file and do all the necessary calculations and output
+it to a new File.
+
+The controller package does all of the calculations. There are 9 classes in the controller package. It contains an
+abstract Calculator class that has three subclasses (BinaryCalculator, HexCalculator, DecimalCalculator) which each deal
+with their specific data types. It also contains a Convertible interface which the Binary, Hex, and Decimal classes
+implement. The last three classes (DownloadUploadTimeCalculator, WebsiteBandwidthCalculator, Converter) deal with
+calculations with download/upload time, converting one unit to another, and calculating the website bandwidth.
